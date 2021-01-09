@@ -1,14 +1,16 @@
 (ns coffeeshop.core
   (:gen-class)
   (:require [io.pedestal.http :as http]
-            [clojure.tools.namespace.repl :refer [refresh]]))
+            [clojure.tools.namespace.repl :refer [refresh]]
+            [coffeeshop.beans]))
 
 (defn respond-hello [request]
   {:status 200
    :body "Hello, Coffee Shop"})
 
 (def routes
-  #{["/hello" :get `respond-hello]})
+  #{["/hello" :get `respond-hello]
+    ["/beans" :get coffeeshop.beans/all-beans :route-name :get-beans]})
 
 (def service-map {::http/routes routes
                   ::http/port 8800

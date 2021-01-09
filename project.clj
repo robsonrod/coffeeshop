@@ -7,6 +7,7 @@
                  [io.pedestal/pedestal.service "0.5.7"]
                  [io.pedestal/pedestal.jetty "0.5.7"]
                  [com.layerware/hugsql "0.4.9"]
+                 [org.xerial/sqlite-jdbc "3.34.0"]
                  [org.clojure/tools.namespace "0.2.11"]
                  [org.clojure/tools.logging "0.3.1"]
                  [ch.qos.logback/logback-classic "1.1.3"]]
